@@ -1,0 +1,137 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center" style="height: 100px;">
+    <h1 style="color: orange;">Service at Home</h1>      
+    <p style="color: blueviolet ;">Our Mission is fast and best Service at your Home</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <!-- <a class="navbar-brand" href="#">Logo</a> -->
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Deals</a></li>
+        <li><a href="#">Stores</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+
+
+        <small  class= "float-right" (click)="gotologin()">Your Account </small>
+        <li><a href="login"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        
+        but
+
+        <li><a href=""><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<footer class="container-fluid text-center">
+    <form class="form-inline">
+      <!-- <input type="text" class="form-control" size="50" placeholder="Search your region"> -->
+      <button type="button" class="btn btn-danger"  [routerLink]="['/searchfromcity']">Search your area</button>
+      <!-- <button type="button" class="btn btn-danger" (click)="getDataFromCity()" >Search your area</button> -->
+    </form>
+  </footer>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align: center;">Cleaning</div>
+        <div class="panel-body"><img src="https://image.shutterstock.com/image-photo/female-janitor-cleaning-supplies-kitchen-260nw-1571020054.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer" style="text-align: center;">200Rs/hr</div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-danger">
+        <div class="panel-heading" style="text-align: center;">Electrician</div>
+        <div class="panel-body" style="height:400px; width: 350px;"><img src="https://5.imimg.com/data5/LV/WE/GLADMIN-50653570/electrician-services-500x500.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer" style="text-align: center;">400Rs/hr</div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-success">
+        <div class="panel-heading" style="text-align: center;">Painter</div>
+        <div class="panel-body" style="height:400px; width: 350px;"><img src="https://thumbs.dreamstime.com/z/painter-services-abstract-concept-vector-illustration-residential-commercial-painting-contractor-interior-exterior-house-192459060.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer" style="text-align: center;">100Rs/hr</div>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading" style="text-align: center;">Barber</div>
+        <div class="panel-body" style="height:400px; width: 350px;"><img src="data:image/jpeg;base64,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" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer" style="text-align: center;">300Rs/hr</div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary" style="text-align: center;">
+        <div class="panel-heading">Plumber</div>
+        <div class="panel-body" style="height:400px; width: 350px;"><img src="https://thearchitectsdiary.com/wp-content/uploads/2020/02/Plumbing.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer" style="text-align: center;">300Rs/hr</div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary" >
+        <div class="panel-heading" styl e="text-align: center;">Home Decorator</div>
+        <div class="panel-body" style="height:400px; width: 350px;"><img src="https://5.imimg.com/data5/SELLER/Default/2020/8/HJ/NG/QC/50761968/3d-architectural-visualization-service-1000x1000.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer" style="text-align: center;">500Rs/hr</div>
+      </div>
+    </div>
+  </div>
+</div><br><br>
+
+
+
+</body>
+</html>
+
+
+ 
